@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
-./gradlew shadowJar
+./gradlew clean assemble
 docker build -t atf-test .
 docker-compose up

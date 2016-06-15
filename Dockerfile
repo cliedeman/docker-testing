@@ -3,7 +3,8 @@
 #
 FROM java:8
 
-ENV JAR atf-all.jar
+#ENV JAR atf-all.jar
+ENV JAR atf-0.0.1-SNAPSHOT.jar
 
 ADD build/libs/$JAR /usr/app/
 ADD entrypoint.sh /usr/app/

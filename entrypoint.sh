@@ -1,2 +1,5 @@
 #!/bin/sh
-java -cp ${JAR} "$@"
+set -e
+unzip ${JAR} > /dev/null
+rm ${JAR} > /dev/null
+java -classpath ${PWD}:${PWD}/lib/* "$@"

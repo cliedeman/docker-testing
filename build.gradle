@@ -8,13 +8,11 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath('com.github.jengelman.gradle.plugins:shadow:1.2.3')
 
 	}
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'spring-boot' 
 
 jar {
@@ -42,5 +40,3 @@ dependencies {
 	compile('com.google.guava:guava:19.0')
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
-
-apply plugin: 'com.github.johnrengelman.shadow'
