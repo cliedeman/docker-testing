@@ -13,6 +13,7 @@ public class RestClient {
     public RestClient() {
         this.url = System.getProperties().getProperty("url");
         this.restTemplate = new RestTemplate();
+        System.out.println("URL:" + url);
     }
 
     public void home() {
