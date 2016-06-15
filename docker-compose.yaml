@@ -1,0 +1,11 @@
+version: '2'
+services:
+  server:
+    image: atf-test
+  client:
+    image: atf-test
+    command: ciaran.liedeman.client.ClientApplication -Durl=http://server:8080
+  random:
+    image: atf-test
+    command: java
+    command: ciaran.liedeman.random.Random

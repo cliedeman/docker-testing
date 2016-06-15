@@ -1,5 +1,15 @@
+#
+# docker build -t atf-test .
+#
 FROM java:8
-COPY build/jar /usr/app
+
+ENV JAR atf-all.jar
+
+ADD build/libs/$JAR /usr/app/
+ADD entrypoint.sh /usr/app/
+
 WORKDIR /usr/app
-RUN javac Main.java
-CMD ["java", "Main"]
+RUN chmod +x ./entrypoint.sh
+
+ENTRYPOINT ["/usr/app/entrypoint.sh"]
+CMD ["ciaran.liedeman.server.ServerController"]

@@ -13,8 +13,8 @@ public class RestClient {
     private final RestTemplate restTemplate;
 
     @Autowired
-    public RestClient(@Value("${url}") String url) {
-        this.url = url;
+    public RestClient() {
+        this.url = System.getProperties().getProperty("url");
         this.restTemplate = new RestTemplate();
     }
 
