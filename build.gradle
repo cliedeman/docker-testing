@@ -4,10 +4,12 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+        jcenter()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath ('se.transmode.gradle:gradle-docker:1.2')
+		classpath('com.github.jengelman.gradle.plugins:shadow:1.2.3')
+
 	}
 }
 
@@ -19,13 +21,17 @@ jar {
 	baseName = 'atf'
 	version = '0.0.1-SNAPSHOT'
 }
+
+springBoot {
+	mainClass = "ciaran.liedeman.server.ServerController"
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
-
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
@@ -34,18 +40,4 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 
-
-apply plugin: 'application'
-apply plugin: 'docker'
-
-docker {
-	maintainer = 'Ciaran Liedeman <ciaranliedeman@gmail.com>'
-	baseImage = 'java:8'
-}
-
-// TODO finish this
-task nginxDocker(type: Docker) {
-	applicationName = "atf-testing"
-    addFile('')
-	runCommand ''
-}
+apply plugin: 'com.github.johnrengelman.shadow'
