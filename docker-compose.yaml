@@ -4,7 +4,7 @@ services:
     image: atf-test
   client:
     image: atf-test
-    command: ciaran.liedeman.client.ClientApplication -Durl=http://server:8080
+    command: -Durl=http://server:8080 ciaran.liedeman.client.ClientApplication
   random:
     image: atf-test
     command: java
