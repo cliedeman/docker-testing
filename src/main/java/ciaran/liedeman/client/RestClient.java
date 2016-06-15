@@ -1,7 +1,5 @@
 package ciaran.liedeman.client;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -12,7 +10,6 @@ public class RestClient {
     private final String url;
     private final RestTemplate restTemplate;
 
-    @Autowired
     public RestClient() {
         this.url = System.getProperties().getProperty("url");
         this.restTemplate = new RestTemplate();
