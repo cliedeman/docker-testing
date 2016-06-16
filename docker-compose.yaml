@@ -2,6 +2,8 @@ version: '2'
 services:
   server:
     image: atf-test
+    ports:
+      - "8080:8080"
   client:
     image: atf-test
     command: -Durl=http://server:8080 ciaran.liedeman.client.ClientApplication

@@ -7,7 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class ClientApplication {
 
-    private static final int WAIT = 20;
+    private static final int WAIT = 10;
 
     /**
      * Invoke with -Durl=server-to-test

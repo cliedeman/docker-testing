@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @EnableAutoConfiguration
-@SpringBootApplication
 public class ServerController {
 
     @RequestMapping("/")

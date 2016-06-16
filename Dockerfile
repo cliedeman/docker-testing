@@ -12,5 +12,7 @@ ADD entrypoint.sh /usr/app/
 WORKDIR /usr/app
 RUN chmod +x ./entrypoint.sh
 
+EXPOSE 8080
+
 ENTRYPOINT ["/usr/app/entrypoint.sh"]
 CMD ["ciaran.liedeman.server.ServerController"]
